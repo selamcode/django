@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <title>Is it Newyear ? </title>
+        <link href="{% static 'newyear/styles.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+         <!-- if a new year say YES else say NO-->  
+        <!-- since html does allow logica statment we use Djano to insert logical statement 
+            the way we do that is using    open curly bracket % <python logical statement> % closed curly bracket
+            check the bottom logic to understand
+        --> 
+        {% if newyear %}
+            <h1>YES</h1>
+        {% else %}
+            <h1>NO</h1>
+        {% endif %}
+
+    </body>
+
+</html>

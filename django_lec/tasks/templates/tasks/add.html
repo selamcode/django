@@ -1,0 +1,17 @@
+{% extends "tasks/layout.html" %}
+
+<!-- inisde the block body I  would like to insert this content-->
+{% block body %} 
+    <h1> Add Task </h1>
+    <form action="{% url 'tasks:add' %}" method="post">
+        {% csrf_token %}
+
+        <!-- you can use django to add forms the use the farable form here, it's simpler that way -->
+        {{ form }}
+        <input type="submit">
+    </form>
+
+    <!-- for tasks:add to work we have to have apps_name = "tasks" inside views.py -->
+    <a href=" {% url 'tasks:index' %} " > view task</a>
+
+{% endblock %}

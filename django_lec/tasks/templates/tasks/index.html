@@ -1,0 +1,26 @@
+{% extends "tasks/layout.html" %}
+
+<!-- inisde the block body I  would like to insert this content-->
+{% block body %}
+
+    <h1>Tasks</h1>
+
+    <ul>
+        {% for task in tasks %}
+            <li>
+                {{ task.title }}
+            </li>
+        <!-- if the list is empty then print say no task -->
+        {% empty %}
+            <li>
+                No Task
+            </li>
+        {% endfor %}
+        
+
+    </ul>
+
+   
+    <a href="{% url 'tasks:add' %}" > Add Task </a> 
+
+{% endblock %}
